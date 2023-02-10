@@ -1,6 +1,10 @@
 import Login from "components/auth/Login";
 import Register from "components/auth/Register";
+import Dashboard from "components/dashboard";
+import Comments from "components/comments";
 import Layout from "components/layout";
+import Profile from "components/profile";
+import Users from "components/users"
 import { createBrowserRouter } from "react-router-dom"
 
 export const ROOT = "/";
@@ -8,6 +12,10 @@ export const PROTECTED = "/protected"
 export const LOGIN = "/login";
 export const REGISTER = "/register";
 export const DASHBOARD = "/protected/dashboard";
+export const USERS = "/protected/users";
+export const PROFILE = "/protected/profile/:id";
+export const COMMENTS = "/protected/comments/:id";
+
 export const router =  createBrowserRouter([
     {
         path : ROOT,
@@ -27,8 +35,20 @@ export const router =  createBrowserRouter([
         children:[
             {
                 path: DASHBOARD,
-                element: "Dasj"
+                element: <Dashboard />
             },
+            {
+                path: USERS,
+                element: <Users />
+            },
+            {
+                path: PROFILE,
+                element: <Profile />
+            },
+            {
+                path: COMMENTS,
+                element: <Comments />,
+              },
         ],
     },
 

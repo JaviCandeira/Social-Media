@@ -28,7 +28,7 @@ export function useAuth(){
         }
     }, [authLoading]);
 
-    return { user: authUser, isLoading, error};
+    return { user, isLoading, error};
 }
 
 export function useLogin(){
@@ -129,7 +129,7 @@ export function useRegister() {
 }
 
 export function useLogout() {
-    const [signOut, isLoading, error] = useSignOut(auth);
+    const [signOut, isLoading] = useSignOut(auth);
     const toast = useToast();
     const navigate = useNavigate();
   
